@@ -15,6 +15,9 @@ include device/xiaomi/sm6150-common/BoardConfigCommon.mk
 # Inherit from proprietary configuration
 include vendor/xiaomi/surya/BoardConfigVendor.mk
 
+# APEX
+DEXPREOPT_GENERATE_APEX_IMAGE := true
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := surya,karna
 
