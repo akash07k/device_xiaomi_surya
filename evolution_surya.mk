@@ -21,15 +21,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from surya device
 $(call inherit-product, device/xiaomi/surya/device.mk)
 
-# Inherit from common ShapeshiftOS configuration
-TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/ssos/configs/common_full_phone.mk)
+# Inherit from common EvolutionX configuration
 
+$(call inherit-product, vendor/evolution/configs/common_full_phone.mk)
+
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_INCLUDE_PIXEL_CHARGER := true
 TARGET_USES_BLUR := true
+TARGET_GAPPS_ARCH := arm64
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Device identifier
-PRODUCT_NAME := ssos_surya
+PRODUCT_NAME := evolution_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3
@@ -45,7 +48,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
-
-PRODUCT_PRODUCT_PROPERTIES += \
-  ro.ssos.cpu=SD732
-
